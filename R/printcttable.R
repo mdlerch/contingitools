@@ -15,4 +15,20 @@ print.cttable <- function(cttable)
 	}
 	nf <- attr(cttable, "factors")
 
+	if (nf == 1)
+	{
+		print(as.table(cttable[ ,  , 1]))
+	} else {
+		for (i in 1:nf)
+		{
+			msg <- paste("Factor ", i, "\n", sep = "")
+			cat(msg)
+			print(as.table(cttable[ , , i]))
+			cat("\n")
+		}
+	}
+
+	invisible(cttable)
+
 }
+

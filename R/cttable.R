@@ -26,4 +26,3 @@ cttable <- function(input)
 	return(out)
 }
 
-print.cttable()
