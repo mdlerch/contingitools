@@ -9,6 +9,7 @@
 #' @export
 #'
 
+# page 60 table 6.1 a b c d is DE nDE DnE nDnE
 cttable <- function(input)
 {
 	input <- c(input)
