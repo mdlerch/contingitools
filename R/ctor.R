@@ -12,6 +12,7 @@
 #'
 ct.or <- function(cttable, level = 0.95)
 {
+	p <- 1 - (1 - level) / 2
 	if (attr(cttable, "factors") == 1)
 	{
 		DE   <- cttable[1, 1, 1]
@@ -19,8 +20,14 @@ ct.or <- function(cttable, level = 0.95)
 		DnE  <- cttable[2, 1, 1]
 		nDnE <- cttable[2, 2, 1]
 
-		or <- A * B / (C * D)
+		or <- DE / nDE / (DnE / nDnE)
+
+		# interval on log scale
+		se <- sqrt( 1 / DE + 1 / nDE + 1 / DnE + 1 / nDnE)
+		int <- log(or) + c(-1, 1) * qnorm(p) * se
+		return(list(estimate = or, interval = exp(int)))
 	}
 
-	return(or)
+	# small sample size on page 80
+
 }
