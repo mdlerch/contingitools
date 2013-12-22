@@ -1,0 +1,9 @@
+Package: contingitools
+Version: 0.10
+Title: Contingency tables for biostatistics and epidemiology
+Author: Michael Lerch <mdlerch@gmail.com>
+Maintainer: Michael Lerch <mdlerch@gmail.com>
+Depends: R (>=3.0.2)
+Description: Functions to analyze contingency tables based on Jewell's
+_Statistics for Epidemiology_
+License: GPLv2
