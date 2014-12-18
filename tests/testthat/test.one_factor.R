@@ -11,15 +11,18 @@ cttable3 <- cttable(c(178, 1411, 79, 1486))
 # Point estimates
 test_that("Odds Ratio", {
               expect_equal(1, ct.or(cttable1)$OR)
-              expect_true(abs(2.14 - ct.or(cttable2)$OR) < 0.01)})
+              expect_equal(2.14, round(ct.or(cttable2)$OR), 2)
+})
 
 test_that("Relative Risk", {
               expect_equal(1, ct.rr(cttable1)$RR)
-              expect_true(abs(2.12 - ct.rr(cttable2)$RR) < 0.1)})
+              expect_equal(2.12, round(ct.rr(cttable2)$RR, 2))
+})
 
 test_that("Excess Risk", {
               expect_equal(0, ct.er(cttable1)$ER)
-              expect_true(abs(0.062 - ct.er(cttable3)$ER) < 0.01)})
+              expect_equal(0.062, round(ct.er(cttable3)$ER, 3))
+})
 
 # intervals
 
