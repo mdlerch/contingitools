@@ -24,5 +24,5 @@ test_that("Excess Risk", {
 # intervals
 
 test_that("Excess Risk Interval", {
-              expect_equal(c(0.043, 0.080), round(ct.er(cttable3)$interval, 3))})
+              expect_equal(c(0.043, 0.080), round(ct.er(cttable3)$CI, 3))})
 
