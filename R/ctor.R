@@ -14,7 +14,7 @@ ct.or <- function(cttable, level = 0.95)
         De <- cttable[2, 1, 1]
         de <- cttable[2, 2, 1]
 
-        or <- DE / dE / (De / de)
+        or <- (DE / dE) / (De / de)
 
         # interval on log scale
         se <- sqrt( 1 / DE + 1 / dE + 1 / De + 1 / de)
