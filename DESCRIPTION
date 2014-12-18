@@ -1,5 +1,5 @@
 Package: contingitools
-Version: 0.01
+Version: 0.0.9
 Title: Contingency tables for biostatistics and epidemiology
 Author: Michael Lerch <mdlerch@gmail.com>
 Maintainer: Michael Lerch <mdlerch@gmail.com>
