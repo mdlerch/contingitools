@@ -20,7 +20,7 @@ ct.or <- function(cttable, level = 0.95)
         # interval on log scale sec. 7.1.2 pg 77
         se <- sqrt( 1 / DE + 1 / dE + 1 / De + 1 / de)
         int <- log(or) + c(-1, 1) * qnorm(p) * se
-        return(list(OR = or, interval = exp(int)))
+        return(list(OR = or, CI = exp(int)))
     }
 
     # small sample size on page 80

@@ -15,7 +15,7 @@ ct.rr <- function(cttable, level = 0.95)
         se <- sqrt((dE / (DE * (DE + dE))) + (de / (De + de)))
         int <- log(rr) + c(-1, 1) * qnorm(p) * se
 
-        return(list(RR = rr, interval = exp(int)))
+        return(list(RR = rr, CI = exp(int)))
 
         # see page 82 for small sample size
 

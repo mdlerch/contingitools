@@ -14,6 +14,6 @@ ct.er <- function(cttable, level = 0.95)
         # interval on original scale (difference of proportions)
         se <- sqrt(DE * dE / (DE + dE) ^ 3 + De * de / (De + de) ^ 3)
         int <- er + c(-1, 1) * qnorm(p) * se
-        return(list(ER = er, interval = int))
+        return(list(ER = er, CI = int))
     }
 }
