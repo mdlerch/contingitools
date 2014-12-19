@@ -1,5 +1,10 @@
 ct.rr <- function(cttable, level = 0.95)
 {
+    if (class(cttable) != "cttable")
+    {
+        cttable <- cttable(cttable)
+    }
+
     p <- 1 - (1 - level) / 2
     if (attr(cttable, "Groups") == 1)
     {
