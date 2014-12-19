@@ -14,14 +14,14 @@ cttable <- function(input)
                           dimnames = list(case = c("D", "!D"),
                                           exposure = c("E", "!E")))
             class(out) <- "cttable"
-            attr(out, "factors") <- 1
+            attr(out, "Groups") <- 1
         } else {
-            out <- array(input, dim = c(2, 2, nf <- length(input) / 4),
+            out <- array(input, dim = c(2, 2, nG <- length(input) / 4),
                          dimnames = list(case=c("D", "!D"), exposure = c("E", "!E"),
-                                         factors = paste("f", 1:nf, sep = "")))
+                                         groups = paste("f", 1:nG, sep = "")))
             out <- aperm(out, c(2, 1, 3))
             class(out) <- "cttable"
-            attr(out, "factors") <- nf
+            attr(out, "Groups") <- nG
         }
     } else {
         stop("incorrect size")
@@ -35,15 +35,15 @@ print.cttable <- function(cttable)
     {
         stop("This is not a cttable")
     }
-    nf <- attr(cttable, "factors")
+    nG <- attr(cttable, "Groups")
 
-    if (nf == 1)
+    if (nG == 1)
     {
         print(as.table(cttable[ ,  ]))
     } else {
-        for (i in 1:nf)
+        for (i in 1:nG)
         {
-            msg <- paste("Factor ", i, "\n", sep = "")
+            msg <- paste("Group ", i, "\n", sep = "")
             cat(msg)
             print(as.table(cttable[ , , i]))
             cat("\n")

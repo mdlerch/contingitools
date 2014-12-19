@@ -7,7 +7,7 @@ ct.or <- function(cttable, level = 0.95)
 
     p <- 1 - (1 - level) / 2
 
-    if (attr(cttable, "factors") == 1)
+    if (attr(cttable, "Groups") == 1)
     {
         DE <- cttable[1, 1]
         dE <- cttable[1, 2]

@@ -1,5 +1,5 @@
 library(contingitools)
-context("One factor should be a matrix, more should be an array")
+context("One group should be a matrix, more should be an array")
 
 # No pattern
 cttable1 <- cttable(c(5, 5, 5, 5))
