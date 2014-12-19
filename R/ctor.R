@@ -9,10 +9,10 @@ ct.or <- function(cttable, level = 0.95)
 
     if (attr(cttable, "factors") == 1)
     {
-        DE <- cttable[1, 1, 1]
-        dE <- cttable[1, 2, 1]
-        De <- cttable[2, 1, 1]
-        de <- cttable[2, 2, 1]
+        DE <- cttable[1, 1]
+        dE <- cttable[1, 2]
+        De <- cttable[2, 1]
+        de <- cttable[2, 2]
 
         # (4.2) pg 32
         or <- (DE / dE) / (De / de)
