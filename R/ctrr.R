@@ -12,7 +12,7 @@ ct.rr <- function(cttable, level = 0.95)
         rr <- (DE / (DE + dE)) / (De / (De + de))
 
         # interval on log scale sec 7.2 pg 82
-        se <- sqrt((dE / (DE * (DE + dE))) + (de / (De + de)))
+        se <- sqrt((dE / (DE * (DE + dE))) + (de / (De * (De + de))))
         int <- log(rr) + c(-1, 1) * qnorm(p) * se
 
         return(list(RR = rr, CI = exp(int)))
