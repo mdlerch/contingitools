@@ -15,6 +15,7 @@ test_that("Odds Ratio", {
               expect_equal(1, ct.or(cttable1)$OR)
               expect_equal(2.14, round(ct.or(cttable3.1)$OR), 2)
               expect_equal(2.75, round(ct.or(cttable7.3)$OR), 2)
+              expect_equal(2.62, round(ct.or(cttable7.3, correction = TRUE)$OR), 2)
 })
 
 test_that("Relative Risk", {
@@ -36,13 +37,18 @@ test_that("Attributable Risk", {
 # intervals
 
 test_that("Odds Ratio Interval", {
-              expect_equal(c(1.66, 4.55), round(ct.or(cttable7.3)$CI, 2))})
+              expect_equal(c(1.66, 4.55), round(ct.or(cttable7.3)$CI, 2))
+              expect_equal(c(1.64, 4.45), round(ct.or(cttable7.3, correction = TRUE)$CI, 2))
+})
 
 test_that("Relative Risk Interval", {
-              expect_equal(c(1.72, 2.87), round(ct.rr(cttable7.4)$CI, 2))})
+              expect_equal(c(1.72, 2.87), round(ct.rr(cttable7.4)$CI, 2))
+})
 
 test_that("Excess Risk Interval", {
-              expect_equal(c(0.043, 0.080), round(ct.er(cttable7.4)$CI, 3))})
+              expect_equal(c(0.043, 0.080), round(ct.er(cttable7.4)$CI, 3))
+})
 
 test_that("Attributable Risk Interval", {
-              expect_equal(c(0.26, 0.48), round(ct.ar(cttable7.4)$CI, 2))})
+              expect_equal(c(0.26, 0.48), round(ct.ar(cttable7.4)$CI, 2))
+})
