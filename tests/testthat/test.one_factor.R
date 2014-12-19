@@ -28,6 +28,11 @@ test_that("Excess Risk", {
               expect_equal(0.062, round(ct.er(cttable7.4)$ER, 3))
 })
 
+test_that("Attributable Risk", {
+              expect_equal(0, ct.ar(cttable1)$AR)
+              expect_equal(0.38, round(ct.ar(cttable7.4)$AR, 2))
+})
+
 # intervals
 
 test_that("Odds Ratio Interval", {
@@ -39,3 +44,5 @@ test_that("Relative Risk Interval", {
 test_that("Excess Risk Interval", {
               expect_equal(c(0.043, 0.080), round(ct.er(cttable7.4)$CI, 3))})
 
+test_that("Attributable Risk Interval", {
+              expect_equal(c(0.26, 0.48), round(ct.ar(cttable7.4)$CI, 2))})
